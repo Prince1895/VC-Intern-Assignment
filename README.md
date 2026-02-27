@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VC Intelligence Interface
 
-## Getting Started
+A premium, functional VC discovery interface designed as a modern SaaS application. Features live AI data enrichment, curated startup lists, saved searches, custom theming, and dynamic profile views. Built for investors to streamline startup sourcing workflows.
 
-First, run the development server:
+![Screenshot](public/screenshot.png) *(Note: Replace with actual screenshot of the dashboard)*
+
+## 🚀 Core Features & V2 Updates
+
+- **SaaS UI Redesign**: Premium side-navigation and central view with unified custom `<Modal>` and global `<Toast>` notifications (no native browser pop-ups).
+- **Light/Dark Mode**: Built-in `ThemeProvider` syncing smoothly with `localStorage` CSS variables for comfortable long-session viewing.
+- **Dynamic Company Directory**: Add new startups manually via the UI. Custom URLs are merged with the mock database natively, allowing you to instantly profile, save, and enrich newly discovered companies.
+- **Advanced Search & Filters**: Instantly find startups based on industry and funding stage.
+- **Save Searches**: Persist your filter criteria using `localStorage` to quickly re-run queries later.
+- **Lists Functionality**: Tag startups into unique custom collections, and export them directly to `.CSV` or `.JSON` effortlessly.
+- **Live AI Enrichment Endpoint (`/api/enrich`)**: Secure, server-side dynamic API endpoint that fetches any public company webpage and passes standard HTML to the Gemini 2.5 Flash LLM. Returns structured, actionable startup insights (Summary, Keywords, What they do, and inferred signals) without exposing API keys to the client.
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Vanilla CSS Modules & global CSS Variables (No Tailwind CSS)
+- **Icons**: Lucide React
+- **Data Extractor**: Google Gemini 2.5 Flash via native `fetch` API server proxy
+- **State Management**: Standard React context (`ThemeContext`, `ToastContext`) mapped to local/session Storage persistence APIs.
+
+---
+
+## 💻 Local Setup Instructions
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Set up Environment Variables
+
+To utilize the Live Enrichment tool (the "Enrich" button in the company profile view), you need to provide a Google Gemini API key.
+
+1. Copy `.env.local.example` to `.env.local`:
+   ```bash
+   cp .env.local.example .env.local
+   ```
+2. Open `.env.local` and add your Gemini API Key. (You can generate one for free from Google AI Studio).
+   ```text
+   GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+
+### 3. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to preview the Intelligence UI.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌍 Deployment
 
-## Learn More
+This application is SSR (Server-Side Rendring) compatible and production-ready for platforms like Vercel or Netlify. 
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Critical Step:** Ensure that the `GEMINI_API_KEY` is added to the Environment Variables settings of your deployment console for the production environment so the `/api/enrich` endpoint retains functionality. No extra configuration needed.

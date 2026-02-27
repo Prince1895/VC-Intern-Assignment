@@ -1,0 +1,98 @@
+[
+    {
+        "id": "c1",
+        "name": "Stripe",
+        "url": "https://stripe.com",
+        "industry": "FinTech",
+        "stage": "Late Stage",
+        "location": "San Francisco, CA"
+    },
+    {
+        "id": "c2",
+        "name": "Vercel",
+        "url": "https://vercel.com",
+        "industry": "Developer Tools",
+        "stage": "Series D",
+        "location": "San Francisco, CA"
+    },
+    {
+        "id": "c3",
+        "name": "Supabase",
+        "url": "https://supabase.com",
+        "industry": "Developer Tools",
+        "stage": "Series C",
+        "location": "Singapore"
+    },
+    {
+        "id": "c4",
+        "name": "Linear",
+        "url": "https://linear.app",
+        "industry": "Productivity",
+        "stage": "Series B",
+        "location": "San Francisco, CA"
+    },
+    {
+        "id": "c5",
+        "name": "OpenAI",
+        "url": "https://openai.com",
+        "industry": "AI",
+        "stage": "Late Stage",
+        "location": "San Francisco, CA"
+    },
+    {
+        "id": "c6",
+        "name": "Anthropic",
+        "url": "https://anthropic.com",
+        "industry": "AI",
+        "stage": "Late Stage",
+        "location": "San Francisco, CA"
+    },
+    {
+        "id": "c7",
+        "name": "Perplexity",
+        "url": "https://perplexity.ai",
+        "industry": "AI",
+        "stage": "Series B",
+        "location": "San Francisco, CA"
+    },
+    {
+        "id": "c8",
+        "name": "Raycast",
+        "url": "https://raycast.com",
+        "industry": "Productivity",
+        "stage": "Series B",
+        "location": "London, UK"
+    },
+    {
+        "id": "c9",
+        "name": "Arc",
+        "url": "https://arc.net",
+        "industry": "Consumer Internet",
+        "stage": "Series B",
+        "location": "New York, NY"
+    },
+    {
+        "id": "c10",
+        "name": "Figma",
+        "url": "https://figma.com",
+        "industry": "Design",
+        "stage": "Late Stage",
+        "location": "San Francisco, CA"
+    },
+    {
+        "id": "c11",
+        "name": "Notion",
+        "url": "https://notion.so",
+        "industry": "Productivity",
+        "stage": "Late Stage",
+        "location": "San Francisco, CA"
+    },
+    {
+        "id": "c12",
+        "name": "Replit",
+        "url": "https://replit.com",
+        "industry": "Developer Tools",
+        "stage": "Series B",
+        "location": "San Francisco, CA"
+    }
+]
